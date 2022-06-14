@@ -8,7 +8,7 @@
 ========== */
 if ($('[data-wm-plugin="section-slider"]').length && (window.self == window.top || $('[data-view-slider="true"]').length || $('.sqs-seven-one').length)){
   if (!$('head link[href*="WMSlider121520"]').length){
-    $('head').prepend('<link href="https://assets.codepen.io/3198845/WMSlider121520v3.2.20.css" rel="stylesheet">')
+    $('head').prepend('<link href="https://cdn.jsdelivr.net/gh/willmyethewebsiteguy/sectionSlider@3.3.001/styles.css" rel="stylesheet">')
   }
 }
 /*Swiper 6.4.10 | Most modern mobile touch slider and framework with hardware accelerated transitions | https://swiperjs.com | Copyright 2014-2021 Vladimir Kharlampidi | Released under the MIT License | Released on: January 29, 2021*/
