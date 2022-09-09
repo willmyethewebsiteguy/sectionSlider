@@ -1,13 +1,10 @@
 /* ==========
-  Version: WM Slider 3.2.20 
+  Version: WM Slider 3.3
   Sliding Image Banner for Squarespace
-  
-  Updates: 
-    - Now accounts for accidental duplicated code blocks in Slider 
 ========== */
 if ($('[data-wm-plugin="section-slider"]').length && (window.self == window.top || $('[data-view-slider="true"]').length || $('.sqs-seven-one').length)){
   if (!$('head link[href*="WMSlider121520"]').length){
-    $('head').prepend('<link href="https://cdn.jsdelivr.net/gh/willmyethewebsiteguy/sectionSlider@3.3.003/styles.css" rel="stylesheet">')
+    $('head').prepend('<link href="https://cdn.jsdelivr.net/gh/willmyethewebsiteguy/sectionSlider@3.3/styles.css" rel="stylesheet">')
   }
 }
 /*Swiper 6.4.10 | Most modern mobile touch slider and framework with hardware accelerated transitions | https://swiperjs.com | Copyright 2014-2021 Vladimir Kharlampidi | Released under the MIT License | Released on: January 29, 2021*/
@@ -170,6 +167,30 @@ function SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, 
       img.removeAttribute('loading')
     }
   })
+  thisObj.$sliderContainer.find('.sqs-block.image-block img, .section-background img').each(function() {
+    let img = $(this)[0]
+
+    img.classList.add('loaded');
+    let imgData = img.dataset,
+        focalPoint = imgData.imageFocalPoint,
+        parentRation = imgData.parentRatio,
+        src = img.src,
+        loading = img.loading;
+    if (focalPoint) {
+      let x = focalPoint.split(',')[0] * 100,
+          y = focalPoint.split(',')[1] * 100;
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectPosition = `${x}% ${y}%`;
+      img.style.objectFit = 'cover'
+    }
+    if (!src) {
+      img.src = imgData.src
+    }
+    if (loading) {
+      img.removeAttribute('loading')
+    }
+  })
 
   
   $(window).on('scroll resize', function(){
@@ -193,7 +214,7 @@ function SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, 
   });
 
   /*Resize observer to watch when a Slide gets resized updateSlider*/
-  let slidesVanilla = document.querySelectorAll('[data-section-slider="' + i + '"].swiper-container .wm-slide');
+  /*let slidesVanilla = document.querySelectorAll('[data-section-slider="' + i + '"].swiper-container .wm-slide');
   slidesVanilla.forEach(slide => {
     let watchSlideResize = new ResizeObserver(entries => {
       for (let entry of entries) {
@@ -201,7 +222,7 @@ function SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, 
       }
     });
     watchSlideResize.observe(slide);
-  });
+  });*/
 }
 /*Init Code*/
 if ($('html > div#yui3-css-stamp').length && (window.self == window.top || $('[data-view-slider="true"]').length)){
