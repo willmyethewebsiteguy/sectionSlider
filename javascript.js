@@ -167,7 +167,7 @@ function SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, 
       img.removeAttribute('loading')
     }
   })
-  thisObj.$sliderContainer.find('.sqs-block.image-block img, .section-background img').each(function() {
+  thisObj.$sliderContainer.find('.section-background img').each(function() {
     let img = $(this)[0]
 
     img.classList.add('loaded');
