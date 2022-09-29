@@ -189,6 +189,12 @@ body:not(.sqs-edit-mode-active) .hide-block{
   transform: translate3d(0px, 0px, 0px) !important;
 }
 
+/*Fix for Background Image FX*/
+.wm-slide .background-image-fx {
+  visibility: visible;
+}
+
+
 /*
 Swiper 6.4.10
 Most modern mobile touch slider and framework with hardware accelerated transitions
