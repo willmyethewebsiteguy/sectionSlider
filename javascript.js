@@ -348,8 +348,17 @@ if ($('html > div#yui3-css-stamp').length && (window.self == window.top || $('[d
     let spacing = typeof $(this).attr('data-spacing') !== 'undefined' ? parseInt($(this).attr('data-spacing')) : 0;
     let effect = typeof $(this).attr('data-effect') !== 'undefined' ? $(this).attr('data-effect') : false;
     let keepBkgAspect = typeof $(this).attr('data-aspect') == 'undefined' ? false : $(this).attr('data-aspect');
-    new SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, arrows, direction, spacing, stretch, color, sliderHeight, autoPlayTimer, stopOnLastSlide, loop, effect, keepBkgAspect);
-  });
+    let buildEvent = $(this).attr('data-build-event') !== undefined ? $(this).attr('data-build-event') : 'DOMContentLoaded';
+    
+    if (buildEvent == 'immediate'){
+      new SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, arrows, direction, spacing, stretch, color, sliderHeight, autoPlayTimer, stopOnLastSlide, loop, effect, keepBkgAspect);
+    } else {
+      window.addEventListener(buildEvent, function() {  
+        if (el.closest('.wm-slide').length !== 0) return;
+        new SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, arrows, direction, spacing, stretch, color, sliderHeight, autoPlayTimer, stopOnLastSlide, loop, effect, keepBkgAspect);
+      })
+    }
+   });
 
   //If the Slider is the First Section
   let $firstSection = $('.tweak-transparent-header .wm-slider-container:first-child .wm-slide:not(.swiper-slide-duplicate)');
