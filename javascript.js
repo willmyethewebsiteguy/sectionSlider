@@ -313,6 +313,7 @@ if ($('html > div#yui3-css-stamp').length && (window.self == window.top || $('[d
     if ($(this).closest('.wm-slider-container').length !== 0) {
       return;
     };
+    let el = $(this);
     $(this).closest('.sqs-block').addClass('hide-block');
     ++i;
     let staticFirst = typeof $(this).attr('data-static') == "undefined" ? false : $(this).attr('data-static'),
