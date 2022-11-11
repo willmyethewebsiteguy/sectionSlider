@@ -3,6 +3,7 @@
   padding-top:0px;
 }
 
+
 /*When in Edit Mode*/
 body.sqs-edit-mode-active .wm-slide{
   opacity: 1 !important;
@@ -28,7 +29,8 @@ body.sqs-edit-mode-active .wm-slide{
   bottom:0;
   min-height: 100% !important;
 }
-[data-section-slider].swiper-container .static-first .section-background{
+[data-section-slider].swiper-container .static-first .section-background,
+[data-section-slider].swiper-container .static-first .section-border{
   display:none;
 }
 [data-section-slider] .swiper-slide-duplicate .section-background img{
@@ -53,7 +55,8 @@ body.sqs-edit-mode-active .wm-slide{
 [data-section-slider].static-image.swiper-container:first-child .wm-slide{
   background: transparent;  
 }
-.static-image .swiper-wrapper .page-section .section-background{
+.static-image .swiper-wrapper .page-section .section-background,
+.static-image .swiper-wrapper .page-section .section-border{
   display:none !important;
 }
 
@@ -193,7 +196,6 @@ body:not(.sqs-edit-mode-active) .hide-block{
 .wm-slide .background-image-fx {
   visibility: visible;
 }
-
 
 /*
 Swiper 6.4.10
