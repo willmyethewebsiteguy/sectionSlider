@@ -33,14 +33,14 @@ function SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, 
   thisObj.staticFirst = staticFirst;
   thisObj.$staticFirst = $staticFirst;
   /*Build Markup*/
-  thisObj.$slides.addClass('wm-slide swiper-slide').wrapAll('<div class="swiper-container swiper" data-section-slider="' + i + '"></div>').wrapAll('<div class="swiper-wrapper"></div>');
+  thisObj.$slides.addClass('wm-slide swiper-slide').wrapAll('<div class="swiper swiper-container" data-section-slider="' + i + '"></div>').wrapAll('<div class="swiper-wrapper"></div>');
 
   /*If on IE*/
   if (window.document.documentMode) {
     $('body').addClass('msie')
   } 
 
-  thisObj.$sliderContainer = $('[data-section-slider="' + i + '"].swiper-container');
+  thisObj.$sliderContainer = $('[data-section-slider="' + i + '"].swiper');
   thisObj.$sliderWrapper = thisObj.$sliderContainer.find('.swiper-wrapper');
   thisObj.$sliderContainer.addClass('wm-slider-container');
   /*Add Static First*/
@@ -150,7 +150,7 @@ function SectionSlider(i, slides, staticFirst, $staticFirst, speed, pagination, 
     });
   };
 
-  let slider = new Swiper('[data-section-slider="' + i + '"].swiper-container', {
+  let slider = new Swiper('[data-section-slider="' + i + '"].swiper', {
     direction: thisObj.direction,
     speed: thisObj.speed,
     spaceBetween: thisObj.spacing,
