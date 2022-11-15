@@ -19,7 +19,7 @@ body.sqs-edit-mode-active .wm-slide{
 
 
 /*Static Section (Static Text)*/
-[data-section-slider].swiper-container .static-first{
+[data-section-slider].swiper .static-first{
   background:transparent;
   z-index:9;
   position:absolute;
@@ -28,9 +28,13 @@ body.sqs-edit-mode-active .wm-slide{
   right:0;
   bottom:0;
   min-height: 100% !important;
+  pointer-events:none;
 }
-[data-section-slider].swiper-container .static-first .section-background,
-[data-section-slider].swiper-container .static-first .section-border{
+.static-first a, .static-first p, .static-first h1, .static-first h2, .static-first h3, .static-first h4{
+  pointer-events:auto;
+}
+[data-section-slider].swiper .static-first .section-background,
+[data-section-slider].swiper .static-first .section-border{
   display:none;
 }
 [data-section-slider] .swiper-slide-duplicate .section-background img{
@@ -39,11 +43,11 @@ body.sqs-edit-mode-active .wm-slide{
   object-fit:cover;
 }
 /*Reverse Static Section (Static Image)*/
-[data-section-slider].swiper-container.static-image .static-first{
+[data-section-slider].swiper.static-image .static-first{
   z-index:1 !important;
 }
-[data-section-slider].swiper-container.static-image .static-first .section-background,
-[data-section-slider].swiper-container.static-image .static-first .section-border{
+[data-section-slider].swiper.static-image .static-first .section-background,
+[data-section-slider].swiper.static-image .static-first .section-border{
   display:block !important;
 }
 .static-image .static-first .content-wrapper{
@@ -53,13 +57,17 @@ body.sqs-edit-mode-active .wm-slide{
   z-index: 2;
   background: transparent;
 }
-[data-section-slider].static-image.swiper-container:first-child .wm-slide{
+[data-section-slider].static-image.swiper:first-child .wm-slide{
   background: transparent;  
 }
 .static-image .swiper-wrapper .page-section .section-background,
 .static-image .swiper-wrapper .page-section .section-border{
   display:none !important;
 }
+.static-first{
+
+}
+
 
 /*Vertical Slider*/
 [data-section-slider].vertical-slider .wm-slide{
@@ -96,10 +104,10 @@ body.sqs-edit-mode-active .wm-slide{
 }
 
 /*Fix First Section Padding Top Issue*/
-.sqs-seven-one [data-section-slider].swiper-container:first-child .wm-slide{
+.sqs-seven-one [data-section-slider].swiper:first-child .wm-slide{
   padding-top: var(--wM-headerHeight) !important;
 }
-[data-section-slider].swiper-container:first-child .wm-slide.background-width--inset .section-background{
+[data-section-slider].swiper:first-child .wm-slide.background-width--inset .section-background{
   top: 2vw !important;
 }
 .wm-slide.page-section:first-child{
@@ -847,6 +855,6 @@ button.swiper-pagination-bullet {
 }
 
 /*====== FADE CODE  =========*/
-.swiper-container-fade.swiper-container-free-mode .swiper-slide{transition-timing-function:ease-out}.swiper-container-fade .swiper-slide{pointer-events:none;transition-property:opacity}.swiper-container-fade .swiper-slide .swiper-slide{pointer-events:none}.swiper-container-fade .swiper-slide-active,.swiper-container-fade .swiper-slide-active .swiper-slide-active{pointer-events:auto}
+.swiper-fade.swiper-free-mode .swiper-slide{transition-timing-function:ease-out}.swiper-fade .swiper-slide{pointer-events:none;transition-property:opacity}.swiper-fade .swiper-slide .swiper-slide{pointer-events:none}.swiper-fade .swiper-slide-active,.swiper-fade .swiper-slide-active .swiper-slide-active{pointer-events:auto}
 
 /*====== OVERFLOW CODE  =========*/
