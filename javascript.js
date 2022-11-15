@@ -7,7 +7,7 @@
 ========== */
 if ($('[data-wm-plugin="section-slider"]').length && (window.self == window.top || $('[data-view-slider="true"]').length || $('.sqs-seven-one').length)){
   if (!$('head link[href*="WMSlider121520"]').length){
-    $('head').prepend('<link href="https://cdn.jsdelivr.net/gh/willmyethewebsiteguy/sectionSlider@3.3/styles.css" rel="stylesheet">')
+    $('head').prepend('<link href="https://cdn.jsdelivr.net/gh/willmyethewebsiteguy/sectionSlider@3.3/styles.min.css" rel="stylesheet">')
   }
 }
 /**
