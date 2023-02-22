@@ -34,7 +34,8 @@ body.sqs-edit-mode-active .wm-slide{
   pointer-events:auto;
 }
 [data-section-slider].swiper .static-first .section-background,
-[data-section-slider].swiper .static-first .section-border{
+[data-section-slider].swiper .static-first .section-border,
+[data-section-slider].swiper .static-first .section-divider{
   display:none;
 }
 [data-section-slider] .swiper-slide-duplicate .section-background img{
@@ -47,7 +48,8 @@ body.sqs-edit-mode-active .wm-slide{
   z-index:1 !important;
 }
 [data-section-slider].swiper.static-image .static-first .section-background,
-[data-section-slider].swiper.static-image .static-first .section-border{
+[data-section-slider].swiper.static-image .static-first .section-border,
+[data-section-slider].swiper.static-image .static-first .section-divider{
   display:block !important;
 }
 .static-image .static-first .content-wrapper{
@@ -61,7 +63,8 @@ body.sqs-edit-mode-active .wm-slide{
   background: transparent;  
 }
 .static-image .swiper-wrapper .page-section .section-background,
-.static-image .swiper-wrapper .page-section .section-border{
+.static-image .swiper-wrapper .page-section .section-border,
+.static-image .swiper-wrapper .page-section .section-divider{
   display:none !important;
 }
 .static-first{
