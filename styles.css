@@ -114,7 +114,7 @@ body.sqs-edit-mode-active .wm-slide{
   top: 2vw !important;
 }
 .wm-slide.page-section:first-child{
-   padding-top:0px;
+   padding-top:0px !important;
 }
 
 /*Hide Code Block*/
