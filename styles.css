@@ -1,9 +1,4 @@
 /*This Code is Licensed by Will-Myers.com*/
-.wm-slide.page-section:first-child{
-  padding-top:0px;
-}
-
-
 /*When in Edit Mode*/
 body.sqs-edit-mode-active .wm-slide{
   opacity: 1 !important;
@@ -43,6 +38,7 @@ body.sqs-edit-mode-active .wm-slide{
   height:100%;
   object-fit:cover;
 }
+
 /*Reverse Static Section (Static Image)*/
 [data-section-slider].swiper.static-image .static-first{
   z-index:1 !important;
@@ -113,7 +109,7 @@ body.sqs-edit-mode-active .wm-slide{
 [data-section-slider].swiper:first-child .wm-slide.background-width--inset .section-background{
   top: 2vw !important;
 }
-.wm-slide.page-section:first-child{
+body:not(.sqs-edit-mode-active) .wm-slide.page-section:first-child{
    padding-top:0px !important;
 }
 
