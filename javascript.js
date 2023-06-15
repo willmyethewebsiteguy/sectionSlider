@@ -449,13 +449,33 @@ if(typeof window.webkitConvertPointFromNodeToPage === 'function') {
 }
 /*If in the Backend Editor*/
 if(window.self !== window.top){
-  $('[data-test="frameToolbarEdit"]', parent.document).on('click', function(){
-    $('.swiper-wrapper .wm-slide').css('width', "")
-    $('.swiper-wrapper').unwrap();
-    $('.swiper-wrapper .wm-slide:first-child').unwrap();
-    $('.swiper-button-next').add('.swiper-button-prev').remove();
-    $('.swiper-pagination').remove();
-    $('.swiper-slide-duplicate').remove();
-    $('.swiper-notification').remove();
-  })
+  let body = document.body;
+  function checkClass() {
+    if (body.classList.contains('sqs-edit-mode-active')) {
+      $('.swiper-wrapper .wm-slide').css({
+        'width': "",
+        'z-index': 'initial'
+      })
+      $('.swiper-wrapper').unwrap();
+      $('.swiper-wrapper .wm-slide:first-child').unwrap();
+      $('.swiper-button-next').add('.swiper-button-prev').remove();
+      $('.swiper-pagination').remove();
+      $('.swiper-slide-duplicate').remove();
+      $('.swiper-notification').remove();
+      observer.disconnect();
+    }
+  }
+  
+  // Mutation observer configuration
+  let observerConfig = {
+    attributes: true,
+    attributeFilter: ['class'],
+    subtree: false
+  };
+  
+  // Create a new mutation observer
+  let observer = new MutationObserver(checkClass);
+  
+  // Start observing the body element
+  observer.observe(body, observerConfig);
 }
