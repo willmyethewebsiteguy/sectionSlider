@@ -4,6 +4,31 @@ body.sqs-edit-mode-active .wm-slide{
   opacity: 1 !important;
   transform:unset !important;
 }
+.sqs-edit-mode-active [data-wm-plugin="section-slider"]{
+  color: var(--headingLargeColor, white);
+  border: 2px dashed;
+  padding: 8px;
+}
+.sqs-edit-mode-active [data-wm-plugin="section-slider"]:after{
+  content: 'Section Slider Code';
+  background-color: var(--siteBackgroundColor, black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  padding: 2px 5px;
+}
+.sqs-edit-mode-active .sqs-block:hover [data-wm-plugin="section-slider"]:after{
+  opacity: 1;
+  visibility: visible;
+}
 
 /*Prevent Flickering on WebKit and Native Background videos*/
 .wm-slide .section-background,
@@ -204,6 +229,9 @@ body:not(.sqs-edit-mode-active) .hide-block{
 .wm-slide .background-image-fx {
   visibility: visible;
 }
+
+
+
 
 /**
  * Swiper 8.4.4
