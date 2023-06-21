@@ -448,10 +448,12 @@ if(typeof window.webkitConvertPointFromNodeToPage === 'function') {
   $('html').addClass('wm-isWebkit')
 }
 /*If in the Backend Editor*/
-if(window.self !== window.top){
-  let body = document.body;
+(function(){
+  let observer;
+  
   function checkClass() {
-    if (body.classList.contains('sqs-edit-mode-active')) {
+    if (document.body.classList.contains('sqs-edit-mode-active')) {
+      console.log('unwrap!')
       $('.swiper-wrapper .wm-slide').css({
         'width': "",
         'z-index': 'initial'
@@ -466,16 +468,15 @@ if(window.self !== window.top){
     }
   }
   
-  // Mutation observer configuration
-  let observerConfig = {
-    attributes: true,
-    attributeFilter: ['class'],
-    subtree: false
-  };
-  
-  // Create a new mutation observer
-  let observer = new MutationObserver(checkClass);
-  
-  // Start observing the body element
-  observer.observe(body, observerConfig);
-}
+  if(window.self !== window.top){
+    // config
+    let observerConfig = {
+      attributes: true,
+      attributeFilter: ['class'],
+      subtree: false
+    };
+    
+    observer = new MutationObserver(checkClass);
+    observer.observe(document.body, observerConfig);
+  }
+}());
