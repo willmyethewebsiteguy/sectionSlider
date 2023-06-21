@@ -453,7 +453,6 @@ if(typeof window.webkitConvertPointFromNodeToPage === 'function') {
   
   function checkClass() {
     if (document.body.classList.contains('sqs-edit-mode-active')) {
-      console.log('unwrap!')
       $('.swiper-wrapper .wm-slide').css({
         'width': "",
         'z-index': 'initial'
